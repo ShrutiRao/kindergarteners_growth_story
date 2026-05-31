@@ -1,0 +1,16 @@
+[project]
+name = "kindergarten-growth-journey"
+version = "0.1.0"
+description = "Single-child kindergarten growth dashboard"
+requires-python = ">=3.11"
+dependencies = [
+  "streamlit>=1.37",
+  "pandas>=2.2",
+  "altair>=5.3",
+  "requests>=2.32",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+]

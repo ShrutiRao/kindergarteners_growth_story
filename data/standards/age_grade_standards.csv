@@ -1,0 +1,9 @@
+metric,sex,age_min_months,age_max_months,expected_min,expected_target,expected_max,unit,notes
+reading_minutes,all,60,72,15,20,30,minutes,Daily reading support
+books_read,all,60,72,1,2,4,books,Books per week
+sight_words_mastered,all,60,72,5,10,20,words,Core sight-word recognition
+letters_recognized,all,60,72,20,26,26,letters,Alphabet recognition
+writing_score,all,60,72,1,3,5,score,Rubric-based writing score
+math_problems_correct,all,60,72,5,10,15,problems,Simple math practice
+screen_time_minutes,all,60,72,0,30,60,minutes,Daily limit guidance
+outdoor_play_minutes,all,60,72,30,60,120,minutes,Physical activity guidance
