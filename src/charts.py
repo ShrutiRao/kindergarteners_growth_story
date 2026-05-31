@@ -31,3 +31,17 @@ def benchmark_chart(observed: float, target: float, metric_label: str):
         )
         .properties(title=metric_label, width="container")
     )
+
+
+def activity_minutes_chart(frame):
+    return (
+        alt.Chart(frame)
+        .mark_bar()
+        .encode(
+            x=alt.X("date:T", title="Date"),
+            y=alt.Y("minutes:Q", title="Minutes"),
+            color=alt.Color("activity:N", title="Activity"),
+            tooltip=["date:T", "activity:N", alt.Tooltip("minutes:Q", title="Minutes")],
+        )
+        .properties(title="Minutes Spent Each Day by Activity", width="container")
+    )

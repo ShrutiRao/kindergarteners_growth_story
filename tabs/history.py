@@ -4,8 +4,8 @@ import pandas as pd
 import streamlit as st
 
 from services.datagov import dataset_metadata
-from src.analytics import latest_observation, summarize_progress
-from src.charts import line_chart
+from src.analytics import activity_minutes_by_day, latest_observation, summarize_progress
+from src.charts import activity_minutes_chart, line_chart
 
 
 def render_public_context():
@@ -30,3 +30,14 @@ def render_history_tab(frame: pd.DataFrame | None = None):
     col2.metric("First reading minutes", summary["start"])
     col3.metric("Change", summary["delta"])
     st.altair_chart(line_chart(frame, "reading_minutes", "Reading Minutes Over Time"), use_container_width=True)
+
+    st.subheader("Minutes Spent Each Day by Activity")
+    activity_frame = activity_minutes_by_day(frame)
+    if activity_frame.empty:
+        st.info("No minutes-based activity columns were found in the current data.")
+        return
+
+    st.altair_chart(
+        activity_minutes_chart(activity_frame),
+        use_container_width=True,
+    )
